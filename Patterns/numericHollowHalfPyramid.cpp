@@ -5,25 +5,28 @@ int main()
 {
     int n;
     cin >> n;
-    // n=n/2;   
+
     for(int rows=0;rows<n;rows++)
     {
-        for(int cols=0;cols<rows;cols++)
-        {
-            if(rows==0||rows==rows-1)
-            {
-                cout << rows+2;
-            }
-            else
-            {
-                for(int cols=0;cols<rows;cols++)
-                {
-                    cout << "_";
-                }
-                
-            }
+        cout << 1;
+    }
 
-            
+    for (int rows = 0; rows < n; rows = rows + 1)
+    {
+        if (rows == 0 || rows == n - 1)
+        {
+            for (int cols = 0; cols < rows; cols++)
+            {
+                cout << cols + 2;
+            }
+        }
+        else
+        {
+            for (int cols = 0; cols < rows; cols++)
+            {
+                cout << "_";
+            }
+            cout << rows + 1;
         }
         cout << endl;
     }
