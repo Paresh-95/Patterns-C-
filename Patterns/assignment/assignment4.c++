@@ -1,28 +1,42 @@
-#include<iostream>
-#include "assert.h"
+#include <iostream>
 using namespace std;
 
 int main()
 {
     int n;
     cin >> n;
-    for(int rows=0;rows<n;rows++)
+
+    // for(int rows=0;rows<n;rows++)
+    // {
+    //     for(int cols=0;cols<rows;cols++)
+    //     {
+    //         cout << "*";
+    //     }
+    //     cout << endl;
+    // }
+
+    // for(int rows=0;rows<n;rows++)
+    // {
+    //     for(int cols=1;cols<=n-rows;cols++)
+    //     {
+    //         cout << "*";
+    //     }
+    //     cout << endl;
+    // }
+
+    
+    for (int rows = 0; rows < 2*n-1; rows++)
     {
-        int start = 8-rows;
-        int num = rows+1;
-        int count = num;
-        for(int cols=0;cols<17;cols++)
+        int cond = 0;
+        if (rows < n)
         {
-            if(count>0 && cols==start)
-            {
-                cout << num;
-                start+=2;
-                count--;
-            }
-            else
-            {
-                cout <<"*";
-            }
+            cond = rows;
+        }else{
+            cond = n-(rows%n)-2;
+        }
+        for (int cols = 0; cols <=cond; cols++)
+        {
+            cout << "*";
         }
         cout << endl;
     }
